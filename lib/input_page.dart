@@ -12,9 +12,40 @@ class _InputPageState extends State<InputPage> {
       appBar: AppBar(
         title: Center(child: Text('BMI CACULATOR')),
       ),
-      body: Center(
-        child: Text('Body Text'),
+      body: Column(
+        children: [
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(child: ReusebleCard()),
+                Expanded(child: ReusebleCard()),
+              ],
+            ),
+          ),
+          Expanded(child: ReusebleCard()),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(child: ReusebleCard()),
+                Expanded(child: ReusebleCard()),
+              ],
+            ),
+          )
+        ],
       ),
+    );
+  }
+}
+
+class ReusebleCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Color(0xff1d1e33),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      margin: EdgeInsets.all(15),
     );
   }
 }
